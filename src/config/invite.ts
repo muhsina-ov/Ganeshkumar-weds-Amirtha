@@ -2,32 +2,46 @@
 // EDIT THIS FILE ONLY when cloning this template for a client.
 // ─────────────────────────────────────────────────────────────
 
+import couple1Photo from "@/assets/couple-ganeshkumar-amirtha.jpg";
+import couple2Photo from "@/assets/couple-rishikesan-karthika.jpg";
+
 export const invite = {
   bride: "Amirtha Varsini & Karthika Devi",
   groom: "Ganeshkumar & Rishikesan",
   couples: {
     couple1: {
+      photo: couple1Photo,
       groom: {
         name: "Ganeshkumar",
+        degree: "B.Sc. (Computer Science), M.B.A. (IBM)",
         alias: "",
         parents: "Son of Thiru Sivakumar & Neelavathi",
+        clan: "CHINNAKONDA",
       },
       bride: {
         name: "Amirtha Varsini",
+        degree: "B.P.T. (Physiotherapy)",
+        degreeStatus: "(Pursuing)",
         alias: "",
         parents: "Daughter of Thiru Rameshbabu & Shanthe",
+        clan: "SELUKKA",
       },
     },
     couple2: {
+      photo: couple2Photo,
       groom: {
         name: "Rishikesan",
+        degree: "D.C.S.E., B.E.",
         alias: "",
         parents: "Son of Thiru Rameshbabu & Shanthe",
+        clan: "SELUKKA",
       },
       bride: {
         name: "Karthika Devi",
+        degree: "B.Com.",
         alias: "",
         parents: "Daughter of Thiru Sivakumar & Neelavathi",
+        clan: "CHINNAKONDA",
       },
     },
   },

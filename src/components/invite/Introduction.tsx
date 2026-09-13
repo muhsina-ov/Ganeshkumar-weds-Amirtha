@@ -55,7 +55,7 @@ export function Introduction() {
       <div className="relative z-10 mt-10 flex flex-col items-center">
         {/* Marigold pill badge */}
         <motion.div
-          className="mb-5 px-5 py-1.5 rounded-full text-paper caps text-[0.52rem] tracking-[0.3em]"
+          className="mb-6 px-5 py-1.5 rounded-full text-paper caps text-[0.52rem] tracking-[0.3em]"
           style={{ background: "oklch(0.76 0.17 60 / 0.15)", border: "1px solid oklch(0.76 0.17 60 / 0.35)", color: "oklch(0.58 0.14 52)" }}
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -63,6 +63,27 @@ export function Introduction() {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           Couple One
+        </motion.div>
+
+        {/* Couple 1 Portrait */}
+        <motion.div
+          className="relative mb-8 w-64 sm:w-72 overflow-hidden rounded-t-[4.5rem] rounded-b-2xl p-1.5 shadow-[0_20px_45px_-12px_rgba(80,25,25,0.18)]"
+          style={{
+            background: "linear-gradient(135deg, oklch(0.85 0.12 75), oklch(0.76 0.17 60), oklch(0.60 0.18 2))",
+          }}
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 1.2, ease }}
+        >
+          <div className="relative overflow-hidden rounded-t-[4.2rem] rounded-b-[1rem] bg-paper">
+            <img
+              src={invite.couples.couple1.photo}
+              alt="Ganeshkumar & Amirtha Varsini"
+              className="w-full aspect-[3/4] object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-gold/40 rounded-t-[4.2rem] rounded-b-[1rem]" />
+          </div>
         </motion.div>
 
         {/* Groom */}
@@ -76,11 +97,29 @@ export function Introduction() {
             ({invite.couples.couple1.groom.alias})
           </motion.p>
         )}
-        <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+        {invite.couples.couple1.groom.degree && (
+          <motion.p
+            className="caps mt-1 text-[0.62rem] tracking-[0.22em] text-marigold font-medium"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+          >
+            {invite.couples.couple1.groom.degree}
+          </motion.p>
+        )}
+        <motion.p className="caps mt-2 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1, delay: 0.4 }}>
           {invite.couples.couple1.groom.parents}
         </motion.p>
+        {invite.couples.couple1.groom.clan && (
+          <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 1, delay: 0.45 }}>
+            {invite.couples.couple1.groom.clan}
+          </motion.p>
+        )}
 
         {/* and separator with flourishes */}
         <motion.div
@@ -97,11 +136,34 @@ export function Introduction() {
         <div className="script flex items-center justify-center text-[3.4rem] sm:text-6xl text-maroon leading-[1.08]">
           <ScriptNames text={invite.couples.couple1.bride.name} delay={0.2} />
         </div>
-        <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+        {invite.couples.couple1.bride.degree && (
+          <motion.div
+            className="caps mt-1 flex items-center justify-center gap-1.5 text-[0.62rem] tracking-[0.22em] text-marigold font-medium"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: 0.35 }}
+          >
+            <span>{invite.couples.couple1.bride.degree}</span>
+            {invite.couples.couple1.bride.degreeStatus && (
+              <span className="font-serif italic lowercase tracking-normal text-[0.75rem] text-marigold/90">
+                {invite.couples.couple1.bride.degreeStatus}
+              </span>
+            )}
+          </motion.div>
+        )}
+        <motion.p className="caps mt-2 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1, delay: 0.6 }}>
           {invite.couples.couple1.bride.parents}
         </motion.p>
+        {invite.couples.couple1.bride.clan && (
+          <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 1, delay: 0.65 }}>
+            {invite.couples.couple1.bride.clan}
+          </motion.p>
+        )}
       </div>
 
       {/* ── Coloured divider between couples ── */}
@@ -125,22 +187,61 @@ export function Introduction() {
       {/* ── Couple 2 ── */}
       <div className="relative z-10 flex flex-col items-center">
         <motion.div
-          className="mb-5 px-5 py-1.5 rounded-full caps text-[0.52rem] tracking-[0.3em]"
+          className="mb-6 px-5 py-1.5 rounded-full caps text-[0.52rem] tracking-[0.3em]"
           style={{ background: "oklch(0.60 0.18 2 / 0.12)", border: "1px solid oklch(0.60 0.18 2 / 0.30)", color: "oklch(0.45 0.14 10)" }}
           initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.7, delay: 0.1 }}>
           Couple Two
         </motion.div>
 
+        {/* Couple 2 Portrait */}
+        <motion.div
+          className="relative mb-8 w-64 sm:w-72 overflow-hidden rounded-t-[4.5rem] rounded-b-2xl p-1.5 shadow-[0_20px_45px_-12px_rgba(80,25,25,0.18)]"
+          style={{
+            background: "linear-gradient(135deg, oklch(0.85 0.12 75), oklch(0.60 0.18 2), oklch(0.52 0.11 195))",
+          }}
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 1.2, ease }}
+        >
+          <div className="relative overflow-hidden rounded-t-[4.2rem] rounded-b-[1rem] bg-paper">
+            <img
+              src={invite.couples.couple2.photo}
+              alt="Rishikesan & Karthika Devi"
+              className="w-full aspect-[3/4] object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-rose/30 rounded-t-[4.2rem] rounded-b-[1rem]" />
+          </div>
+        </motion.div>
+
         {/* Groom */}
         <div className="script flex items-center justify-center text-[3.4rem] sm:text-6xl text-maroon leading-[1.08]">
           <ScriptNames text={invite.couples.couple2.groom.name} delay={0.1} />
         </div>
-        <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+        {invite.couples.couple2.groom.degree && (
+          <motion.p
+            className="caps mt-1 text-[0.62rem] tracking-[0.22em] text-rose font-medium"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+          >
+            {invite.couples.couple2.groom.degree}
+          </motion.p>
+        )}
+        <motion.p className="caps mt-2 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1, delay: 0.4 }}>
           {invite.couples.couple2.groom.parents}
         </motion.p>
+        {invite.couples.couple2.groom.clan && (
+          <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 1, delay: 0.45 }}>
+            {invite.couples.couple2.groom.clan}
+          </motion.p>
+        )}
 
         {/* and separator with flourishes */}
         <motion.div
@@ -157,11 +258,29 @@ export function Introduction() {
         <div className="script flex items-center justify-center text-[3.4rem] sm:text-6xl text-maroon leading-[1.08]">
           <ScriptNames text={invite.couples.couple2.bride.name} delay={0.25} />
         </div>
-        <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+        {invite.couples.couple2.bride.degree && (
+          <motion.p
+            className="caps mt-1 text-[0.62rem] tracking-[0.22em] text-rose font-medium"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: 0.35 }}
+          >
+            {invite.couples.couple2.bride.degree}
+          </motion.p>
+        )}
+        <motion.p className="caps mt-2 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1, delay: 0.6 }}>
           {invite.couples.couple2.bride.parents}
         </motion.p>
+        {invite.couples.couple2.bride.clan && (
+          <motion.p className="caps mt-1 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 1, delay: 0.65 }}>
+            {invite.couples.couple2.bride.clan}
+          </motion.p>
+        )}
       </div>
 
       {/* Bottom draw rule */}
