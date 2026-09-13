@@ -15,34 +15,34 @@ import { Venue } from "@/components/invite/Venue";
 import { invite } from "@/config/invite";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
-const title = `Ganeshkumar & Amirtha Varsini, Rishikesan & Karthika Devi — ${invite.dayLine.split(",")[1]?.trim() ?? invite.dateLabel}`;
-const description = `Ganeshkumar & Amirtha Varsini along with Rishikesan & Karthika Devi invite you to their engagement on ${invite.dayLine} at ${invite.venue.name}.`;
+const title = "Ganeshkumar & Amirtha, Rishikesan & Karthika";
+const description = "Celebrate the engagement of Ganeshkumar & Amirtha and Rishikesan & Karthika on Thursday, 17th September 2026 in Madurai.";
 
-const prodUrl = "https://ganeshkumar-amirtha-rishikesan-karthika.invitestory.in";
+const prodUrl = "https://ganeshkumar--amirtha.invitingyou.top";
 const ogImageUrl = `${prodUrl}/og-image.png`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: `${title} · Save the Date` },
+      { title },
       { name: "description", content: description },
-      { property: "og:title", content: `${title} · Save the Date` },
+      { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: prodUrl },
+      { property: "og:url", content: `${prodUrl}/` },
       { property: "og:image", content: ogImageUrl },
       { property: "og:image:secure_url", content: ogImageUrl },
       { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: title },
-      { property: "og:site_name", content: "Ganeshkumar & Amirtha Varsini, Rishikesan & Karthika Devi Wedding Invitation" },
+      { property: "og:image:alt", content: `Engagement of ${title}` },
+      { property: "og:site_name", content: "Engagement Invitation" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${title} · Save the Date` },
+      { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: ogImageUrl },
     ],
-    links: [{ rel: "canonical", href: prodUrl }],
+    links: [{ rel: "canonical", href: `${prodUrl}/` }],
   }),
   component: Invitation,
 });

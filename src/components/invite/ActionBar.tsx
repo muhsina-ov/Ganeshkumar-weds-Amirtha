@@ -29,9 +29,9 @@ export function ActionBar() {
   const share = async () => {
     tap();
     const data = {
-      title: `Ganeshkumar & Amirtha Varsini, Rishikesan & Karthika Devi`,
-      text: `You're invited to celebrate the engagement of Ganeshkumar & Amirtha Varsini, Rishikesan & Karthika Devi on ${invite.dayLine}.`,
-      url: typeof window !== "undefined" ? window.location.href : "https://ganeshkumar-amirtha-rishikesan-karthika.invitestory.in",
+      title: `Ganeshkumar & Amirtha, Rishikesan & Karthika`,
+      text: `You're invited to celebrate the engagement of Ganeshkumar & Amirtha, Rishikesan & Karthika on ${invite.dayLine}.`,
+      url: typeof window !== "undefined" ? window.location.href : "https://ganeshkumar--amirtha.invitingyou.top/",
     };
     try {
       if (navigator.share) await navigator.share(data);
