@@ -18,7 +18,7 @@ import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 const title = "Ganeshkumar & Amirtha, Rishikesan & Karthika";
 const description = "Celebrate the engagement of Ganeshkumar & Amirtha and Rishikesan & Karthika on Thursday, 17th September 2026 in Madurai.";
 
-const prodUrl = "https://ganeshkumar--amirtha.invitingyou.top";
+const prodUrl = "https://ganeshkumar-weds-amirtha.invitingyou.top";
 const ogImageUrl = `${prodUrl}/og-image.png`;
 
 export const Route = createFileRoute("/")({

@@ -31,7 +31,7 @@ export function ActionBar() {
     const data = {
       title: `Ganeshkumar & Amirtha, Rishikesan & Karthika`,
       text: `You're invited to celebrate the engagement of Ganeshkumar & Amirtha, Rishikesan & Karthika on ${invite.dayLine}.`,
-      url: typeof window !== "undefined" ? window.location.href : "https://ganeshkumar--amirtha.invitingyou.top/",
+      url: typeof window !== "undefined" ? window.location.href : "https://ganeshkumar-weds-amirtha.invitingyou.top/",
     };
     try {
       if (navigator.share) await navigator.share(data);
