@@ -14,7 +14,7 @@ export const invite = {
       groom: {
         name: "Ganeshkumar",
         degree: "B.Sc. (Computer Science), M.B.A. (IBM)",
-        alias: "",
+        alias: "Abhinesh",
         parents: "Son of Thiru Sivakumar & Neelavathi",
         clan: "CHINNAKONDA",
       },
