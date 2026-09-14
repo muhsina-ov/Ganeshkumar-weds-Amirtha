@@ -344,7 +344,7 @@ async function generateOgImage() {
           Ganeshkumar <span class="ampersand">&amp;</span> Amirtha Varsini
         </div>
         <div class="qualification-pill">
-          B.Sc., M.B.A. &nbsp;•&nbsp; B.P.T. (Pursuing)
+          B.Sc., M.B.A. &nbsp;•&nbsp; B.P.T.
         </div>
         <div class="family-line">
           S/o Sivakumar &amp; Neelavathi &nbsp;•&nbsp; D/o Rameshbabu &amp; Shanthe

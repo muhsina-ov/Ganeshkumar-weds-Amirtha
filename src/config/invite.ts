@@ -21,7 +21,6 @@ export const invite = {
       bride: {
         name: "Amirtha Varsini",
         degree: "B.P.T. (Physiotherapy)",
-        degreeStatus: "(Pursuing)",
         alias: "",
         parents: "Daughter of Thiru Rameshbabu & Shanthe",
         clan: "SELUKKA",

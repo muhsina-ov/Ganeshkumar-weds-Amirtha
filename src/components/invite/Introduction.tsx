@@ -136,20 +136,23 @@ export function Introduction() {
         <div className="script flex items-center justify-center text-[3.4rem] sm:text-6xl text-maroon leading-[1.08]">
           <ScriptNames text={invite.couples.couple1.bride.name} delay={0.2} />
         </div>
+        {/* Line above degree */}
+        <motion.div
+          className="my-2 h-px w-14 rounded-full bg-marigold/45"
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        />
         {invite.couples.couple1.bride.degree && (
           <motion.div
-            className="caps mt-1 flex items-center justify-center gap-1.5 text-[0.62rem] tracking-[0.22em] text-marigold font-medium"
+            className="caps flex items-center justify-center gap-1.5 text-[0.62rem] tracking-[0.22em] text-marigold font-medium"
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8, delay: 0.35 }}
           >
             <span>{invite.couples.couple1.bride.degree}</span>
-            {invite.couples.couple1.bride.degreeStatus && (
-              <span className="font-serif italic lowercase tracking-normal text-[0.75rem] text-marigold/90">
-                {invite.couples.couple1.bride.degreeStatus}
-              </span>
-            )}
           </motion.div>
         )}
         <motion.p className="caps mt-2 text-[0.55rem] tracking-[0.25em] text-sepia/75 font-medium"
