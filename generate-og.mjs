@@ -215,6 +215,15 @@ async function generateOgImage() {
       white-space: nowrap;
     }
 
+    .nickname {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      color: #7a353d;
+      font-weight: 500;
+      margin-left: 4px;
+    }
+
     .ampersand {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -341,7 +350,7 @@ async function generateOgImage() {
       <!-- Couple 1 Details -->
       <div class="couple-item">
         <div class="couple-title-script">
-          Ganeshkumar <span class="ampersand">&amp;</span> Amirtha Varsini
+          Ganeshkumar <span class="nickname">(Abhinesh)</span> <span class="ampersand">&amp;</span> Amirtha Varsini
         </div>
         <div class="qualification-pill">
           B.Sc., M.B.A. &nbsp;•&nbsp; B.P.T.
@@ -397,7 +406,7 @@ async function generateOgImage() {
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 2 });
+  await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
   await page.setContent(htmlContent, { waitUntil: "networkidle0" });
 
   const publicDir = path.resolve("public");
